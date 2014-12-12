@@ -17,6 +17,8 @@ public class Usuarios
    private float carbohidratosIng;
    //calorias consumidas
    private float calorias;
+   
+   
    /**
     * constructor de usuarios con un parametro para indicar el nombre del mismo
     */
@@ -91,5 +93,41 @@ public class Usuarios
        }
        
    }
+   /**
+    * metodo para saber el nombre del usuario
+    */
+   public String nombreCompararUsuarios()
+   {
+       return nombreUsu;
+   }
    
+   
+   /**
+    * metodo para saber la cantidad de calorias ingeridas
+    */
+   public float caloriasUsu()
+   {
+       return calorias;
+   }
+   
+   
+   /**
+    * metodo para compara la ingesta entre dos usuarios
+    */
+   public void compararIngesta(Usuarios usu)
+   {
+       float caloriasUsu = usu.caloriasUsu();
+       String nombre = usu.nombreCompararUsuarios();
+       
+       if(caloriasUsu > calorias){
+           System.out.println( nombre + "  ha consumido más calorias que " + nombreUsu);
+       }
+       else if(caloriasUsu == calorias){
+           System.out.println( nombre + "  ha consumido las mismas  calorias que " + nombreUsu);
+       }
+       else
+       {
+           System.out.println( nombreUsu + "  ha consumido más calorias que " + nombre);
+       }
+   }
 }
