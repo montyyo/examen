@@ -17,19 +17,24 @@ public class Usuarios
    private float carbohidratosIng;
    //calorias consumidas
    private float calorias;
-   
-   
+   //ALIMENTO MAS CALORICO CONSUMIDO
+   private float masCalorico;
+   //nombre alimento mas calorico
+   private String nombreMasCalorico;
    /**
     * constructor de usuarios con un parametro para indicar el nombre del mismo
     */
    public Usuarios(String nombre)
    {
+       //inicializacion de los parametros en el constructor
        nombreUsu = nombre;
        gramosIngeridos = 0;
        proteinasIng = 0;
        grasasIng = 0;
        carbohidratosIng=0;
        calorias = 0;
+       masCalorico = 0;
+       nombreMasCalorico=null;
    }
    
    /**
@@ -37,6 +42,7 @@ public class Usuarios
     */
    public void comer(Alimento comida, float cantAlimento)//paramentros para especificar el elimento y cantidad a comer
    {
+       masCalorico(comida);
        float total = proteinasIng + grasasIng +carbohidratosIng;
        
        if(cantAlimento <= 100 && cantAlimento > total){
@@ -130,4 +136,25 @@ public class Usuarios
            System.out.println( nombreUsu + "  ha consumido más calorias que " + nombre);
        }
    }
+   
+   /**
+    * metodo para guardar el alimento mas calorico
+    */
+   public void masCalorico(Alimento comida)
+   {
+       if(comida.getCalorias() > masCalorico){
+           masCalorico= comida.getCalorias();
+           nombreMasCalorico=comida.getNombre();
+       }
+   }
+   
+   /**
+    * metodo para mostrar el nombre del alimento mas calorico ingerido por el usuario
+    */
+   public void alimentoMayorIndiceCalorico()
+   {
+    
+       System.out.println("Alimento más calórico ingerido por el usuario hasta el momento: " + nombreMasCalorico);
+   }
+  
 }

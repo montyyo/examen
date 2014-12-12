@@ -100,4 +100,9 @@ public class Alimento
    {
        return calorias;
    }
+   
+   public String getNombre()
+   {
+       return nombreAlimento;
+   }
 }
