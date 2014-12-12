@@ -1,4 +1,4 @@
-
+import java.util.ArrayList; // uso de programas realizados por otros programadore en este caso lista de string
 /**
  * nueva clase para crear usuarios que usan la aplicacion
  */
@@ -21,6 +21,10 @@ public class Usuarios
    private float masCalorico;
    //nombre alimento mas calorico
    private String nombreMasCalorico;
+   //lista de alimentos
+   private ArrayList<String> listaAlimentos; 
+   //alimento
+   private Alimento infComida;
    /**
     * constructor de usuarios con un parametro para indicar el nombre del mismo
     */
@@ -35,6 +39,8 @@ public class Usuarios
        calorias = 0;
        masCalorico = 0;
        nombreMasCalorico=null;
+       listaAlimentos = new ArrayList<>();
+       infComida = null;
    }
    
    /**
@@ -43,6 +49,7 @@ public class Usuarios
    public void comer(Alimento comida, float cantAlimento)//paramentros para especificar el elimento y cantidad a comer
    {
        masCalorico(comida);
+       listaAlimentos.add(comida.getNombre());
        float total = proteinasIng + grasasIng +carbohidratosIng;
        
        if(cantAlimento <= 100 && cantAlimento > total){
@@ -156,5 +163,19 @@ public class Usuarios
     
        System.out.println("Alimento más calórico ingerido por el usuario hasta el momento: " + nombreMasCalorico);
    }
-  
+ 
+      
+   /**
+    * metodo para visualizar los datos nutricionales de un alimento especificando el orden de ingesta del mismo
+    */
+   public void imprimirAlimentoSegunIngesta(int ordenIngesta)
+   {
+      
+      String  datos = listaAlimentos.get(ordenIngesta);//obtenemos el nombre del alimento
+      //infComida = datos.muestraDatos();
+      //para mostrar por pantalla los datos del alimento obteniendo el nombre 
+      // solo necesitamos invocar el metodo mustraDatos de la clase alimentos para imprimir por pantalla.
+     
+   }
+      
 }

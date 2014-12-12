@@ -1,3 +1,6 @@
+
+
+
 /**
  * clase alimento para especificar el nombre y nutrientes del alimento
  */
@@ -96,13 +99,21 @@ public class Alimento
        return total;
    }
    
+   /**
+    * metodo para obtener lascalorias totales
+    */
    public float getCalorias()
    {
        return calorias;
    }
    
+   /**
+    * metodo para obtener el nombre del alimento  totales
+    */
    public String getNombre()
    {
        return nombreAlimento;
    }
+   
+   
 }
