@@ -11,17 +11,20 @@ public class Alimento
    private float carbohidratos;
    //gramos de grasa
    private float grasas;
-   
+   //calorias
+   private float calorias;
    /**
     * constructor del alimento para crear los objetos necesarios
     */
-   public Alimento(String nombre, float proteina, float carbohidrato, float grasa)//parametros de los atributos
+   public Alimento(String nombre, float proteina, float carbohidrato, float grasa , float caloria)//parametros de los atributos
    {
        // inicializamos los atributos del alimento conforme a los parametros del construcctor
        nombreAlimento = nombre;
        proteinas = proteina;
        carbohidratos= carbohidrato;
        grasas = grasa;
+       calorias = caloria;
+       
    }
    
    /**
@@ -33,6 +36,7 @@ public class Alimento
        System.out.println(" Nombre:                           " + nombreAlimento);
        System.out.println("Proteinas por cada 100 gramos:     " + proteinas);
        System.out.println("Carbohidratos por cada 100 gramos: " + carbohidratos);
+       System.out.println("Calorias:                          " + calorias);
        System.out.println("Grasas por cada 100 gramos:        " + grasas);
        if (proteinas > carbohidratos && proteinas > grasas){
            System.out.println("Componente mayoritario/s:            proteinas");
@@ -56,5 +60,44 @@ public class Alimento
        {
             System.out.println("Componente mayoritario/s:                carbohidratos , proteinas y grasas "  );
        }
+   }
+   
+   /**
+    * metodo para obtener los gramos de grasa
+    */
+   public float getGrasa()
+   {
+       
+       return grasas;
+   }
+   
+   /**
+    * metodo para obtener los gramos de proteinas
+    */
+   public float getProteina()
+   {
+       
+       return proteinas;
+   }
+   /**
+    * metodo para obtener los gramos de carbohidratos
+    */
+   public float getCarbohidrato()
+   {
+       
+       return carbohidratos;
+   }
+   /**
+    * metodo para obtener los gramos totales
+    */
+   public float getTotal()
+   {
+       float total = carbohidratos + proteinas + grasas;
+       return total;
+   }
+   
+   public float getCalorias()
+   {
+       return calorias;
    }
 }

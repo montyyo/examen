@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=nombre
+comment0.target=Usuarios(java.lang.String)
+comment0.text=\r\n\ constructor\ de\ usuarios\ con\ un\ parametro\ para\ indicar\ el\ nombre\ del\ mismo\r\n
+comment1.params=comida\ cantAlimento
+comment1.target=void\ comer(Alimento,\ float)
+comment1.text=\r\n\ metodo\ que\ le\ permite\ al\ usuario\ comer\ una\ cantidad\ de\ un\ alimento\r\n
+comment2.params=
+comment2.target=void\ visualizacion()
+comment2.text=\r\n\ metodo\ para\ mostrar\ la\ cantidad\ ingerida\ de\ parametros\ alimenticios\r\n
+numComments=3
