@@ -66,5 +66,30 @@ public class Usuarios
        System.out.println("Calorias ingeridas:                      " + calorias);
    }
    
+   /**
+    * metodo para mostrar la cantidad ingerida de parametros alimenticios con su porcentaje
+    */
+   public void visualizacionConPorcentaje()
+   {
+       float proteinasPorc= (proteinasIng * gramosIngeridos) / 100;
+       float grasasPorc=(grasasIng * gramosIngeridos) / 100;
+       float carbohidratosPorc=(carbohidratosIng * gramosIngeridos) / 100;
+       if( calorias !=0){
+           System.out.println(" Nombre:                                 " + nombreUsu );
+           System.out.println(" Gramos de proteinas ingeridos:          " + proteinasIng + " ( "  + proteinasPorc  + " )");
+           System.out.println(" Gramos de carbohidratos ingeridos:      " + carbohidratosIng + " ( "  + grasasPorc  + " )");
+           System.out.println(" Gramos de grasas ingeridos:             " + grasasIng + " ( "  + carbohidratosPorc  + " )");
+           System.out.println("Calorias ingeridas:                      " + calorias);
+       }
+       else
+       {
+           System.out.println(" Nombre:                                 " + nombreUsu);
+           System.out.println(" Gramos de proteinas ingeridos:          " + proteinasIng);
+           System.out.println(" Gramos de carbohidratos ingeridos:      " + carbohidratosIng);
+           System.out.println(" Gramos de grasas ingeridos:             " + grasasIng);
+           System.out.println("Calorias ingeridas:                      " + calorias);
+       }
+       
+   }
    
 }
